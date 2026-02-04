@@ -1,0 +1,126 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #D4D4D4;
+}
+
+.case p {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 250px;
+  position: relative;
+  z-index: 10;
+}
+
+.case img {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  max-width: 400px;
+  height: auto;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ffd17b;
+  border: none;
+  color: #333;
+  padding: 15px 50px;
+  text-decoration: none;
+  font-size: 30px;
+  margin: 0;
+  border-radius: 20px;
+  font-weight: lighter;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 6px #efa424;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.1s;
+  white-space: nowrap;
+}
+
+.btn:hover{
+  box-shadow: 0 4px #efa424;
+  top: 2px;
+}
+
+.btn:active {
+  box-shadow: 0 0px #efa424;
+  top: 6px;
+  transform: scale(0.95);
+}
+
+.btn-fuyant {
+  transition: all 0.3s ease;
+}
+
+.text {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 80px;
+  font-weight: bold;
+}
+
+.question {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 80px;
+  font-weight: bold;
+  margin-top: 200px;
+}
+
+.coeur {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateX(-50%) translateY(0) scale(1); }
+  50%  { transform: translateX(-50%) translateY(-15px) scale(1.05); }
+  100% { transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+h1{
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+}
+
+.encadrePrincipal {
+  display: flex;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.case {
+  flex: 1;
+  padding: 2em;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(158, 158, 158);
+  width: 900px;
+  height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+
+}

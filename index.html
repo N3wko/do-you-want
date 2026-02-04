@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <title>Do you want ?</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <p class="question"> <strong> DO YOU WANT ?</strong> </p>
+
+    
+    <div class="encadrePrincipal">
+        
+        <div class="case">
+
+            <img src="coeur.png" class="coeur" width="608" height="302" />
+
+            <p>  
+                <button class="btn btn-reel" type="button"> BIEN SUR 🫦 </button>
+                <button class="btn btn-fuyant" type="button"> AANAANAAANAAAN </button>
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        const btnFuyant = document.querySelector('.btn-fuyant');
+        const btnReel = document.querySelector('.btn-reel');
+        const caseElement = document.querySelector('.case');
+
+        // Liste des textes qui vont défiler
+        const textes = [
+            'AANAANAAANAAAN',
+            'NON NON NON !',
+            'JAMAIS !!!',
+            'PAS QUESTION',
+            'MÊME PAS EN RÊVE',
+            'TU RÊVES !',
+            'C\'EST NON !',
+            'ARRÊTE D\'ESSAYER',
+            'LAISSE TOMBER',
+            'NOPE NOPE NOPE',
+            'NÉGATIF !',
+            'IMPOSSIBLE !',
+            'NAN NAN NAN',
+            'TU PERDS TON TEMPS',
+            'ESSAIE ENCORE...'
+        ];
+        
+        let indexTexte = 0;
+        
+        function deplacerBouton() {
+
+            // Changer le texte
+            indexTexte = (indexTexte + 1) % textes.length;
+            btnFuyant.textContent = textes[indexTexte];
+
+
+            // Dimensions ajustées pour éviter que le bouton sorte
+            const maxX = caseElement.offsetWidth - 300;
+            const maxY = caseElement.offsetHeight - 120;
+            
+            const randomX = Math.random() * maxX + 40;
+            const randomY = Math.random() * maxY + 40;
+            
+            btnFuyant.style.position = 'absolute';
+            btnFuyant.style.left = randomX + 'px';
+            btnFuyant.style.top = randomY + 'px';
+        }
+        
+        // Au survol (ordinateur)
+        btnFuyant.addEventListener('mouseenter', deplacerBouton);
+        
+        // Au click
+        btnFuyant.addEventListener('click', function(e) {
+            e.preventDefault();
+            deplacerBouton();
+        });
+        
+        // Pour mobile - au toucher
+        btnFuyant.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            deplacerBouton();
+        });
+
+        // Action quand on clique sur "OUI"
+        btnReel.addEventListener('click', function() {
+            alert('Yeeeees ! 💕');
+        });
+    </script>
+
+</body>
+</html>
