@@ -8,8 +8,21 @@ body{
   font-family: Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  background-color: #feb5b5;
+/*   background-color: #feb5b5; */
+  background: linear-gradient(135deg, #feb5b5 0%, #ffd1dc 100%);
 }
+
+body::before {
+  content: '💕';
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  font-size: 2rem;
+  opacity: 0.2;
+  animation: floatHeart 5s ease-in-out infinite;
+}
+
+
 
 .case p {
   display: flex;
@@ -34,7 +47,7 @@ body{
 
 .btn {
   display: inline-block;
-  background-color: 	#d07c7c;
+  background-color:     #d07c7c;
   border: none;
   color: #333;
   padding: 15px 50px;
@@ -51,6 +64,7 @@ body{
   -webkit-tap-highlight-color: transparent;
   transition: transform 0.1s;
   white-space: nowrap;
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .btn:hover{
@@ -75,16 +89,24 @@ body{
   font-weight: bold;
 }
 
+
+
 .question {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 80px;
   font-weight: bold;
   margin-top: 200px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .coeur {
-  animation: float 4s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite, pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
 }
 
 @keyframes float {
@@ -108,7 +130,6 @@ html, body {
   padding: 0;
   height: 100%;
 }
-
 .case {
   flex: 1;
   padding: 2em;
@@ -122,6 +143,8 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8), 
+              0 0 50px rgba(255, 182, 193, 0.4);
 }
 
 @keyframes heartbeat {
