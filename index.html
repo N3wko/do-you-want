@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="fr">
 
+
+<style>
+    @keyframes simpleFall {
+        to {
+            transform: translateY(100vh);
+            opacity: 0;
+        }
+    }
+</style>
+
 <head>
     <title>Do you want ?</title>
     <meta charset="utf-8">
@@ -45,13 +55,13 @@
             'NON NON NON !',
             'JAMAIS !!!',
             'PAS QUESTION',
-            'MÊME PAS EN RÊVE',
-            'TU RÊVES !',
+            'TU PEUX RÊVER',
+            'TIE FOLLE',
             'C\'EST NON !',
             'ARRÊTE D\'ESSAYER',
             'LAISSE TOMBER',
             'NOPE NOPE NOPE',
-            'NÉGATIF !',
+            'GROSSE NOOB',
             'IMPOSSIBLE !',
             'NAN NAN NAN',
             'TU PERDS TON TEMPS',
@@ -96,8 +106,88 @@
 
         // Action quand on clique sur "OUI"
         btnReel.addEventListener('click', function() {
-            alert('Yeeeees ! 💕');
-        });
+            // Cacher les boutons
+            btnReel.style.display = 'none';
+            btnFuyant.style.display = 'none';
+            
+            // Créer un message de célébration
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-size: 3rem;
+                color: #black;
+                font-weight: bold;
+                animation: celebration 0.5s ease-in-out;
+                z-index: 100;
+            `;
+            messageDiv.innerHTML = `
+                💕 YEEEES ! 💕 <br><br><br>
+                <span style="font-size: 2rem;"> T'es la Goat, très bon choix 🫦🫦</span> <br>
+                <span style="font-size: 2rem;"> On ne va sûrement pas se voir pendant la Saint-Valentin mais tkkttt on rattrapera ça plus tard ... </span>
+            `;
+            
+            caseElement.appendChild(messageDiv);
+            
+            // Ajouter l'animation CSS
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes celebration {
+                    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+                    50% { transform: translate(-50%, -50%) scale(1.2); }
+                    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Faire grossir le cœur
+            const coeur = document.querySelector('.coeur');
+            coeur.style.transition = 'transform 0.5s ease-in-out';
+            coeur.style.transform = 'translateX(-50%) scale(1.3)';
+            
+            // Confettis optionnel (animation simple)
+            setTimeout(() => {
+                for(let i = 0; i < 150; i++) {
+                    setTimeout(() => createConfetti(), i * 20);
+                }
+            }, 0);
+                });
+
+
+        // Fonction pour créer des confettis simples et esthétiques
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            
+            // Palette de couleurs pastel élégante
+            const colors = ['#FFB6C1', '#B0E0E6', '#FFDAB9', '#E6E6FA', '#F0E68C', '#DDA0DD'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            const left = Math.random() * 100;
+            const size = 6 + Math.random() * 6;
+            const duration = 3 + Math.random() * 3;
+            
+            confetti.style.cssText = `
+                position: fixed;
+                width: ${size}px;
+                height: ${size}px;
+                background-color: ${color};
+                left: ${left}%;
+                top: -20px;
+                border-radius: 50%;
+                z-index: 1000;
+                pointer-events: none;
+                opacity: 0.8;
+                animation: simpleFall ${duration}s ease-in forwards;
+            `;
+            
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => confetti.remove(), duration * 1000);
+        }
+
     </script>
 
 </body>
