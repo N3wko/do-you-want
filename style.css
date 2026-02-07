@@ -10,6 +10,8 @@ body{
   line-height: 1.5;
 /*   background-color: #feb5b5; */
   background: linear-gradient(135deg, #feb5b5 0%, #ffd1dc 100%);
+  overflow: hidden;
+  height: 100vh;
 }
 
 body::before {
@@ -155,6 +157,8 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow: hidden;
+  height: 100vh;
 }
 .case {
   flex: 1;
