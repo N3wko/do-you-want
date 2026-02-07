@@ -27,9 +27,14 @@
 
 <body>
 
+    <p class="texte-background"> MY BADDD DESOLE POUR LE RETARD, <br> TU VOIS J'AVAIS UN PETIT PROJET</p>
+
     <p class="question"> <strong> EST-CE QUE TU VEUX ÊTRE MA VALENTINE 🫦 ?</strong> </p>
 
-    
+    <p class="rizz"> T'es comme le V dans le mot février. <br> 
+                    Sans toi, le 14 serait un férié.</p>
+
+
     <div class="encadrePrincipal">
 
         
@@ -111,6 +116,10 @@
             // Cacher les boutons
             btnReel.style.display = 'none';
             btnFuyant.style.display = 'none';
+
+            // Afficher le texte background
+            document.querySelector('.texte-background').style.display = 'block'; 
+            document.querySelector('.rizz').style.display = 'block';
             
             // Créer un message de célébration
             const messageDiv = document.createElement('div');
@@ -134,23 +143,6 @@
             
             caseElement.appendChild(messageDiv);
 
-            // Texte fixé sur le background
-            const texteBg = document.createElement('div');
-            texteBg.style.cssText = `
-                position: fixed;
-                top: 400px;
-                left: 200px;
-                transform: rotate(-10deg);
-                font-size: 2rem;
-                color: rgba(0, 0, 0, 0.15);  /* Semi-transparent pour effet fond */
-                font-weight: bold;
-                z-index: 0;  /* ← Derrière tout (la box est à z-index supérieur) */
-                animation: celebration 1s ease-in-out;
-                white-space: nowrap;
-            `;
-            texteBg.innerHTML = 'MY BADDD DESOLE POUR LE RETARD <br>TU VOIS J\'AVAIS UN PETIT PROJET';
-            document.body.appendChild(texteBg);
-            
 
 
             // Ajouter l'animation CSS
@@ -166,7 +158,7 @@
             
             // Déplacer le cœur en haut à droite
             const coeur = document.querySelector('.coeur');
-            coeur.style.transition = 'all 0.8s ease-in-out';
+            coeur.style.transition = 'all 2s ease-in-out';
             coeur.style.top = '-30px';
             coeur.style.right = '-300px';
             coeur.style.left = 'auto';
