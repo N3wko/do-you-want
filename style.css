@@ -93,7 +93,7 @@ body::before {
 
 .texte-background {
   position: fixed;
-  top: 450px;
+  top: 800px;
   left:50px;
   font-size: 2rem;
   color: rgba(0, 0, 0, 0.15);
@@ -107,7 +107,7 @@ body::before {
 
 .rizz {
   position: absolute;
-  top: 450px;
+  top: 800px;
   right: 50px;
   transform: translateX(-50%);
   z-index : 100;
@@ -160,6 +160,7 @@ html, body {
   overflow: hidden;
   height: 100vh;
 }
+
 .case {
   flex: 1;
   padding: 2em;
