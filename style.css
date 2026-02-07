@@ -93,7 +93,7 @@ body::before {
 
 .texte-background {
   position: absolute;
-  top: 600px;
+  bottom: 100px;
   left:50px;
   transform: translate(-50%);
   font-size: 2rem;
@@ -107,7 +107,7 @@ body::before {
 
 .rizz {
   position: absolute;
-  top: 600px;
+  bottom: 100px;
   right: 50px;
   transform: translateX(-50%);
   z-index : 100;
