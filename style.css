@@ -93,13 +93,13 @@ body::before {
 
 .texte-background {
   position: fixed;
-  top: 800px;
+  top: 550px;
   left:50px;
   font-size: 2rem;
   color: rgba(0, 0, 0, 0.15);
   font-weight: bold;
   transform: rotate(-10deg);
-  z-index: 0;
+  z-index: 100;
   display: none;
   z-index: 1000;
   pointer-events: none;
@@ -107,7 +107,7 @@ body::before {
 
 .rizz {
   position: absolute;
-  top: 800px;
+  top: 550px;
   right: 50px;
   transform: translateX(-50%);
   z-index : 100;
