@@ -179,3 +179,32 @@ html, body {
   20%, 40% { transform: translateX(-50%) scale(1); }
 }
 
+/* Adaptation mobile iPhone 15/13 */
+@media (max-width: 430px) {
+  .question {
+    font-size: 1.5rem;
+    margin-top: 80px;
+    padding: 0 20px;
+  }
+  
+  .case {
+    width: 95%;
+    height: 600px;
+    padding: 1em;
+  }
+  
+  .btn {
+    font-size: 18px;
+    padding: 10px 25px;
+  }
+  
+  .case img {
+    max-width: 250px;
+  }
+  
+  .case p {
+    margin-top: 180px;
+    gap: 15px;
+    flex-direction: column;
+  }
+}
